@@ -12,3 +12,8 @@ pip install tensorflow
 ```
 pip install PILLOW
 ```
+- Lancer l'exécution du Script flaskapp.py :
+
+```
+python flaskapp.py
+```
