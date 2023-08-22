@@ -38,10 +38,10 @@ d = ast.literal_eval(data)
 #TO DO 
 #Try to fill the predict_label function , where we will load image , transform it to an array , reshape it and predict the class of the image
 def predict_label(img_path):
-    i = #add image.load_img method and take as argument the image path and the target image size (240,240)
-    i = #transform the image to an array of pixels
-    i = # reshape the image to (1, 240, 240, 3) size
-    p = #add model.predict 
+    i = image.load_img(img_path, target_size=(240,240), keep_aspect_ratio=True)#add image.load_img method and take as argument the image path and the target image size (240,240)
+    i = image.img_to_array(i) #transform the image to an array of pixels
+    i = i.reshape(1,240,240,3) # reshape the image to (1, 240, 240, 3) size
+    p = model.predict(i) #add model.predict 
     in_max = np.where(p[0] == np.max(p))
     return d[in_max[0][0]]
 
